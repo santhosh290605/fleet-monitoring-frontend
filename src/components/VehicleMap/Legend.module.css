@@ -1,0 +1,114 @@
+/* === Container === */
+.legend__container {
+  position: absolute; /* Ensures it's positioned relative to the map */
+  top: 10px; /* Adjust the top distance */
+  right: 10px; /* Adjust the right distance */
+  background-color: rgba(255, 255, 255, 0.8); /* Slight transparent background for better visibility */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); /* Adds a nice shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 0.5s ease;
+  z-index: 1000; /* Ensure it stays above map layers */
+}
+
+.legend__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.legend__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* === Legend Item === */
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.legend__item:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-2px);
+}
+
+.legend__icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.legend__label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* === Selected Style === */
+.legend__selected {
+  background-color: #e0f7fa;
+  border-left: 4px solid #00796b;
+  font-weight: 600;
+}
+
+/* === Dark Mode (optional container wrapper `.dark` in parent) === */
+.dark .legend__container {
+  color: #eee;
+}
+
+.dark .legend__item:hover {
+  background-color: #333;
+}
+
+.dark .legend__selected {
+  background-color: #2e7d32;
+  border-left: 4px solid #a5d6a7;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .legend__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .legend__item {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .legend__label {
+    font-size: 0.85rem;
+  }
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

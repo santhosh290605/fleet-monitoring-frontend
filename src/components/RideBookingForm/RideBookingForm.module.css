@@ -1,0 +1,198 @@
+/* RideBookingForm.module.css */
+
+/* RideBookingForm.module.css */
+
+.rideFormContainer {
+  min-height: 100vh; /* Ensure it takes full height */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.rideFormContainer.darkMode {
+  background-color: #1e1e2f;
+  color: #f5f5f5;
+}
+
+
+.darkMode {
+  background-color: #1e1e2f;
+  color: #f5f5f5;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+
+}
+
+.rideFormContainer .darkMode {
+  background-color: #1e1e2f;
+  color: #f5f5f5;
+}
+
+
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+  animation: fadeInDown 0.6s ease;
+}
+
+.label {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  animation: fadeInLeft 0.4s ease;
+}
+
+.input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  animation: fadeInRight 0.4s ease;
+}
+
+.input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.darkModeInput {
+  background-color: #2e2e3e;
+  color: #f5f5f5;
+  border: 1px solid #555;
+}
+
+.button {
+  margin-top: 24px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4a90e2, #007bff);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: fadeInUp 0.5s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.35);
+}
+
+.button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.resultContainer {
+  margin-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 16px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.errorText {
+  color: #e74c3c;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Animations */
+@keyframes fadeInContainer {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rideFormContainer {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .input,
+  .button {
+    font-size: 0.95rem;
+  }
+
+  .button {
+    padding: 12px;
+  }
+}

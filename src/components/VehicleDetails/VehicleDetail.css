@@ -1,0 +1,505 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.vehicle-detail-container {
+  padding: 2rem;
+  background-color: #f8fafc;
+  color: #1a202c;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+.vehicle-detail-container.dark-mode {
+  background-color: #121212;
+  color: #e2e8f0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--link-hover-color);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.btn-link {
+  color: var(--link-color);
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+  display: inline-block;
+  padding: 5px 8px;
+}
+
+.btn-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--link-hover-color);
+  transition: width 0.3s ease;
+}
+
+.btn-link:hover {
+  color: var(--link-hover-color);
+}
+
+.btn-link:hover::after {
+  width: 100%;
+}
+
+h2, h3 {
+  color: var(--text-color);
+}
+
+p , strong , span {
+  color: var(--text-color);
+}
+
+/* Dark Mode Colors */
+.dark-mode {
+  --background-color: #121212;
+  --text-color: #eaeaea;
+  --primary-bg: #333;
+  --secondary-bg: #444;
+  --button-bg: #555;
+  --button-hover-bg: #666;
+  --button-text: #fff;
+  --link-color: #fff;
+  --link-hover-color: #ffcc00;
+}
+
+/* Light Mode Colors */
+.light-mode {
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --primary-bg: #fff;
+  --secondary-bg: #f9f9f9;
+  --button-bg: #007bff;
+  --button-hover-bg: #0056b3;
+  --button-text: #fff;
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body.dark-mode h2, body.dark-mode h3 {
+  color: var(--text-color);
+}
+
+body.dark-mode .vehicle-info-card,
+body.dark-mode .maintenance-history-card,
+body.dark-mode .telemetry-info-card {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+}
+
+body.dark-mode .vehicle-status-label {
+  color: var(--text-color);
+}
+
+body.dark-mode .btn-status {
+  background-color: var(--secondary-bg);
+  color: var(--button-text);
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.dark-mode .btn-status:hover {
+  background-color: var(--button-hover-bg);
+  transform: scale(1.05);
+}
+
+body.dark-mode .btn-edit, body.dark-mode .btn-delete {
+  background-color: var(--primary-bg);
+  color: var(--button-text);
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.dark-mode .btn-edit:hover, body.dark-mode .btn-delete:hover {
+  background-color: var(--secondary-bg);
+  transform: scale(1.05);
+}
+
+body.dark-mode .vehicle-info-content div,
+body.dark-mode .maintenance-item div,
+body.dark-mode .vehicle-status-label,
+body.dark-mode .maintenance-field,
+body.dark-mode .telemetry-content div {
+  color: var(--text-color);
+}
+
+/* Container Styles */
+.vehicle-detail-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vehicle-header-content h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.vehicle-id {
+  font-size: 1rem;
+  color: #777;
+}
+
+.vehicle-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.vehicle-status {
+  margin-top: 30px;
+}
+
+.vehicle-status-label {
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.vehicle-status-active {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.vehicle-status-maintenance {
+  background-color: #FF9800;
+  color: #fff;
+}
+
+.vehicle-status-inactive {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.vehicle-status-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-status {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-status:hover {
+  background-color: #2196F3;
+  transform: scale(1.05);
+}
+
+/* Vehicle Information */
+.vehicle-info-section {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.vehicle-info-card, .maintenance-history-card, .telemetry-info-card {
+  background-color: var(--primary-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-info-card:hover, .maintenance-history-card:hover, .telemetry-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.vehicle-info-card h3, .maintenance-history-card h3, .telemetry-info-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.vehicle-info-content, .maintenance-list, .telemetry-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.vehicle-info-content div, .maintenance-item div {
+  flex: 1 1 calc(50% - 15px);
+}
+
+.maintenance-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.maintenance-field {
+  margin-bottom: 10px;
+}
+
+.maintenance-footer, .telemetry-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.telemetry-info-card {
+  margin-top: 30px;
+}
+
+.telemetry-footer .btn-link {
+  font-size: 1rem;
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+.telemetry-footer .btn-link:hover {
+  color: var(--link-hover-color);
+}
+
+/* Maintenance History Section */
+.maintenance-history-title {
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.no-maintenance-records {
+  color: #777;
+  font-style: italic;
+}
+
+.maintenance-list {
+  margin-top: 20px;
+}
+
+.maintenance-footer a {
+  font-size: 1rem;
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+.maintenance-footer a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Footer Actions */
+.vehicle-footer-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn-back {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: var(--button-text);
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Error and Loading States */
+.error-container, .not-found-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  color: #f44336;
+  margin-bottom: 20px;
+}
+
+.loading-spinner {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #2196F3;
+}
+
+.btn-edit, .btn-delete {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-edit {
+  background-color: #FF9800;
+  color: var(--button-text);
+}
+
+.btn-edit:hover {
+  background-color: #f57c00;
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: var(--button-text);
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.vehicle-detail-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Dark Mode - Specific Overrides */
+body.dark-mode .vehicle-status-active {
+  background-color: #388E3C;
+}
+
+body.dark-mode .vehicle-status-maintenance {
+  background-color: #F57C00;
+}
+
+body.dark-mode .vehicle-status-inactive {
+  background-color: #D32F2F;
+}
+
+body.dark-mode .vehicle-info-card, 
+body.dark-mode .maintenance-history-card, 
+body.dark-mode .telemetry-info-card {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+}
+
+body.dark-mode .vehicle-info-card p, 
+body.dark-mode .maintenance-history-card p, 
+body.dark-mode .telemetry-info-card p {
+  color: white;
+}
+
+body.dark-mode .vehicle-info-card:hover,
+body.dark-mode .maintenance-history-card:hover,
+body.dark-mode .telemetry-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vehicle-info-section {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-info-content div, .maintenance-item div {
+    flex: 1 1 100%;
+  }
+
+  .vehicle-footer-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .vehicle-header-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .vehicle-status-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn-status {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .maintenance-footer, .telemetry-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-header-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .vehicle-id {
+    font-size: 0.9rem;
+  }
+
+  .vehicle-info-card h3, .maintenance-history-card h3, .telemetry-info-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .vehicle-status-label {
+    font-size: 1rem;
+  }
+
+  .btn-back, .btn-edit, .btn-delete, .btn-status {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}

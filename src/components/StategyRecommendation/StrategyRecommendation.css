@@ -1,0 +1,323 @@
+/* ========= STRATEGY RECOMMENDATION STYLES ========= */
+
+/* Global Variables */
+:root {
+    --primary-color-light: #4c6ef5;
+    --secondary-color-light: #f0f4f8;
+    --primary-color-dark: #6366f1;
+    --secondary-color-dark: #000000;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border-color-light: #e5e7eb;
+    --border-color-dark: #374151;
+    --highlight-color: #15803d;
+    --error-color: #dc2626;
+    --button-hover-bg: #3b5bf6;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+  }
+  
+  /* General Styling */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color-light);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Dark Mode */
+  .dark {
+    background-color: var(--secondary-color-dark);
+    color: #e2e8f0;
+  }
+  
+  /* Main Container */
+  .strategy-container {
+    padding: 2rem;
+    max-width: 85rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dark .strategy-container {
+    background-color: #121212;
+  }
+  
+  /* Title Styling */
+  .strategy-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary-color-light);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Strategy Banner */
+  .strategy-banner {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--secondary-color-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .strategy-banner:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px var(--shadow-dark);
+  }
+  
+  .strategy-banner .strategy-icon {
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .strategy-banner:hover .strategy-icon {
+    transform: rotate(20deg);
+  }
+  
+  .strategy-banner h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-primary);
+  }
+  
+  .strategy-banner .strategy-description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .strategy-banner:hover .strategy-description {
+    color: var(--text-primary);
+  }
+  
+  /* Strategy Types */
+  .strategy-delayed {
+    background-color: #ffe5e5;
+  }
+  
+  .strategy-immediate {
+    background-color: #e6ffed;
+  }
+  
+  .strategy-scheduled {
+    background-color: #fff9e6;
+  }
+  
+  /* Dark Mode */
+  .dark .strategy-banner {
+    background-color: var(--secondary-color-dark);
+    box-shadow: 0 4px 20px var(--shadow-dark);
+  }
+  
+  .dark .strategy-delayed {
+    background-color: #2d1313;
+  }
+  
+  .dark .strategy-immediate {
+    background-color: #0f3b2f;
+  }
+  
+  .dark .strategy-scheduled {
+    background-color: #4c3d14;
+  }
+  
+  /* Strategy Cards */
+  .strategy-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    border: 1px solid var(--border-color-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    animation: fadeInSlide 0.5s ease-out;
+  }
+  
+  .strategy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px var(--shadow-dark);
+  }
+  
+  .dark .strategy-card {
+    background-color: #1f2937;
+    border-color: var(--border-color-dark);
+    color: #e5e7eb;
+  }
+  
+  .strategy-card h3 {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color-light);
+    margin-bottom: 0.75rem;
+  }
+  
+  .strategy-card ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+    color: var(--text-secondary);
+  }
+  
+  .strategy-card .text-green {
+    color: var(--highlight-color);
+  }
+  
+  .strategy-card .text-red {
+    color: var(--error-color);
+  }
+  
+  /* Decision Insight */
+  .strategy-insight {
+    background-color: #e0f2fe;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: #1e3a8a;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .strategy-insight h4 {
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+  }
+  
+  .dark .strategy-insight {
+    background-color: #1e293b;
+    color: #dbeafe;
+    border: 1px solid #334155;
+  }
+  
+  /* Hover Animations */
+  .strategy-banner:hover,
+  .strategy-card:hover,
+  .strategy-insight:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px var(--shadow-light);
+  }
+  
+  .strategy-insight:hover {
+    background-color: #bfdbfe;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .strategy-container {
+      padding: 1rem;
+    }
+  
+    .strategy-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .strategy-card, .strategy-banner, .strategy-insight {
+      padding: 1rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .strategy-card, .strategy-banner, .strategy-insight {
+    animation: fadeInSlide 0.6s ease-out both;
+  }
+  
+  /* Unique Interactions */
+  .strategy-card:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  .strategy-banner {
+    position: relative;
+  }
+  
+  .strategy-banner .strategy-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .strategy-banner:hover .strategy-icon {
+    transform: rotate(20deg) translate(5px, 5px);
+  }
+  
+  /* Scroll Animations */
+  @keyframes scrollAnim {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .strategy-insight, .strategy-card {
+    animation: scrollAnim 0.8s ease-out forwards;
+  }
+  
+  /* Custom Button for Interaction */
+  .button-interactive {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color-light);
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .button-interactive:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+  }
+  

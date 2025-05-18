@@ -1,0 +1,136 @@
+/* Vehicle Distance Chart Container */
+.vehicle-distance-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out; /* Smooth transition for dark mode and other changes */
+  overflow: hidden; /* Prevent any content from overflowing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vehicle-distance-container.dark-mode {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .vehicle-distance-container {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+}
+
+/* Chart Title */
+.vehicle-distance-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+  text-align: center;
+  animation: fadeIn 1s ease-out; /* Cool fade-in animation */
+}
+
+.vehicle-distance-container.dark-mode .vehicle-distance-title {
+  color: #fff; /* Title color for dark mode */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chart Container */
+.vehicle-distance-chart {
+  height: 400px;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: chartAnimation 1s ease-out;
+}
+
+@keyframes chartAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dark Mode Styles for the chart */
+.vehicle-distance-container.dark-mode .vehicle-distance-chart {
+  background-color: #2d2d2d;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .vehicle-distance-container {
+    padding: 1rem;
+  }
+
+  .vehicle-distance-title {
+    font-size: 1.6rem;
+  }
+
+  .vehicle-distance-chart {
+    height: 300px;
+  }
+}
+
+/* Tooltip & Hover Effects */
+.vehicle-distance-chart .chartjs-tooltip {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+  padding: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations for Bar Hover Effect */
+.vehicle-distance-chart .chartjs-bar {
+  transition: transform 0.3s ease;
+}
+
+.vehicle-distance-chart .chartjs-bar:hover {
+  transform: scale(1.1); /* Scale up on hover */
+  cursor: pointer;
+}
+
+/* Add a subtle glow effect when dark mode is enabled */
+.vehicle-distance-container.dark-mode .vehicle-distance-chart .chartjs-bar:hover {
+  box-shadow: 0 0 10px rgba(54, 162, 235, 0.8);
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 576px) {
+  .vehicle-distance-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .vehicle-distance-title {
+    font-size: 1.4rem;
+  }
+
+  .vehicle-distance-chart {
+    height: 250px;
+  }
+}

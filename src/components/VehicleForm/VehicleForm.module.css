@@ -1,0 +1,140 @@
+.formContainer {
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 860px;
+  margin: auto;
+  transition: background-color 0.3s ease;
+}
+
+.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.light {
+  background-color: #ffffff;
+  color: #1e1e1e;
+}
+
+.formTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.inputLabel {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.inputField {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 1rem;
+  transition: border 0.2s ease;
+}
+
+.inputLight {
+  background-color: #fff;
+  color: #000;
+}
+
+.inputDark {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+.inputError {
+  border-color: #e63946 !important;
+}
+
+.errorText {
+  color: #e63946;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.dropdownGroup {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.selectLight, .selectDark {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.selectLight {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+}
+
+.selectDark {
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  color: #f0f0f0;
+}
+
+.buttonGroup {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.submitButton, .clearButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submitButton {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.clearButton {
+  background-color: #eee;
+  color: #333;
+}
+
+.submitButton:hover {
+  background-color: #0077e6;
+}
+
+.clearButton:hover {
+  background-color: #ddd;
+}
+
+.spinner {
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

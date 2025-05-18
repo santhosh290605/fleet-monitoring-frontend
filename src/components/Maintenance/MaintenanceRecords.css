@@ -1,0 +1,243 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #000000;
+}
+
+/* Dark Mode Global */
+body.dark-mode {
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Maintenance Page */
+.maintenance-page {
+    padding: 40px;
+    background-color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Maintenance Page */
+body.dark-mode .maintenance-page,
+.maintenance-page.dark-mode {
+    background-color: #000000;
+    color: #fff;
+}
+
+/* Header Section */
+.maintenance-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.maintenance-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Title in dark mode */
+body.dark-mode .maintenance-title,
+.maintenance-page.dark-mode .maintenance-title {
+    color: #ffffff;
+}
+
+.maintenance-subtitle {
+    font-size: 1.2rem;
+    color: #777;
+    margin-top: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Dark Mode Subtitle */
+body.dark-mode .maintenance-subtitle,
+.maintenance-page.dark-mode .maintenance-subtitle {
+    color: #ccc;
+}
+
+/* Table Container */
+.maintenance-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    animation: slideUp 0.5s ease-in-out;
+}
+
+/* Table Animations */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Table Styles */
+.maintenance-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.maintenance-table:hover {
+    transform: scale(1.02);
+}
+
+.maintenance-table th,
+.maintenance-table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.maintenance-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.maintenance-table td {
+    background-color: #fff;
+    color: #333;
+}
+
+.maintenance-table tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+.maintenance-table tr:hover td {
+    background-color: #e2e2e2;
+}
+
+/* Table Header Hover Effect */
+.maintenance-table th:hover {
+    background-color: #f1f1f1;
+}
+
+/* Dark Mode Table Styles */
+body.dark-mode .maintenance-table th,
+.maintenance-page.dark-mode .maintenance-table th {
+    background-color: #000;
+    color: #fff;
+}
+
+body.dark-mode .maintenance-table td,
+.maintenance-page.dark-mode .maintenance-table td {
+    background-color: #444;
+    color: #ffffff;
+}
+
+body.dark-mode .maintenance-table tr:nth-child(even) td,
+.maintenance-page.dark-mode .maintenance-table tr:nth-child(even) td {
+    background-color: #555;
+}
+
+body.dark-mode .maintenance-table tr:hover td,
+.maintenance-page.dark-mode .maintenance-table tr:hover td {
+    background-color: #666;
+}
+
+/* No Records Message */
+.no-records-message {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+body.dark-mode .no-records-message,
+.maintenance-page.dark-mode .no-records-message {
+    color: #ccc;
+}
+
+/* Interactive Button for Dark Mode Toggle */
+.dark-mode-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode-toggle-btn:hover {
+    background-color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .maintenance-title {
+        font-size: 2rem;
+    }
+
+    .maintenance-subtitle {
+        font-size: 1rem;
+    }
+
+    .maintenance-table th,
+    .maintenance-table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .maintenance-page {
+        padding: 20px;
+    }
+
+    .maintenance-table-container {
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 480px) {
+    .maintenance-title {
+        font-size: 1.8rem;
+    }
+
+    .maintenance-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .maintenance-table th,
+    .maintenance-table td {
+        font-size: 0.8rem;
+    }
+}
+
+/* Smooth Transition on Mode Toggle */
+body, .maintenance-page, .maintenance-table th, .maintenance-table td {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

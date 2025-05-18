@@ -1,0 +1,68 @@
+.section {
+    background-color: var(--bg-primary, #f8f9fa);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cardsContainer {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .card {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    color: #fff;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Strategy Colors */
+  .delayed {
+    background-color: #eab308; /* yellow */
+  }
+  
+  .immediate {
+    background-color: #10b981; /* green */
+  }
+  
+  .scheduled {
+    background-color: #3b82f6; /* blue */
+  }
+  
+  .cardTitle {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pieChartWrapper {
+    margin-top: 2rem;
+  }
+  
+  .pieChart {
+    background-color: #1e293b;
+    color: #f8fafc;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.125rem;
+    color: #6b7280;
+  }
+  
